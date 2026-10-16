@@ -1,0 +1,378 @@
+{
+ "title": "Магазин техники",
+ "start": 3000,
+ "save": {
+  "dir": "save",
+  "file": "phone-shop-save.json"
+ },
+ "data": {
+  "CO": [
+   {
+    "id": "appel",
+    "name": "Appel",
+    "e": "🍎",
+    "base": 420,
+    "lines": [
+     "Phone 14",
+     "Phone 15",
+     "Phone 16",
+     "Phone 17",
+     "Phone SE",
+     "Phone Air",
+     "Phone Mini",
+     "Phone Fold"
+    ]
+   },
+   {
+    "id": "samsang",
+    "name": "Samsang",
+    "e": "🌌",
+    "base": 360,
+    "lines": [
+     "Galaxie S",
+     "Galaxie A",
+     "Galaxie M",
+     "Galaxie Z",
+     "Galaxie Note",
+     "Galaxie Edge",
+     "Galaxie Flip",
+     "Galaxie Core"
+    ]
+   },
+   {
+    "id": "xiomi",
+    "name": "Xiomi",
+    "e": "🍊",
+    "base": 220,
+    "lines": [
+     "Redmy 10",
+     "Redmy 11",
+     "Redmy 12",
+     "Poko X",
+     "Poko F",
+     "Mi 13",
+     "Mi 14",
+     "Mi Mix"
+    ]
+   },
+   {
+    "id": "huavei",
+    "name": "Huavei",
+    "e": "🌸",
+    "base": 300,
+    "lines": [
+     "Pura 60",
+     "Pura 70",
+     "Mate 50",
+     "Mate 60",
+     "Nova 11",
+     "Nova 12",
+     "Enjoy 20",
+     "Enjoy 30"
+    ]
+   },
+   {
+    "id": "nokya",
+    "name": "Nokya",
+    "e": "🔷",
+    "base": 150,
+    "lines": [
+     "Classic",
+     "Lumia 9",
+     "N-Series",
+     "C-Series",
+     "G-Series",
+     "X-Series",
+     "T-Series",
+     "Banana"
+    ]
+   },
+   {
+    "id": "ded",
+    "name": "De.d",
+    "e": "🌀",
+    "base": 260,
+    "lines": [
+     "Viode 1",
+     "Viode 2",
+     "Viode 3",
+     "Viode 4",
+     "Viode S",
+     "Viode Air",
+     "Viode Neo",
+     "Viode Fold"
+    ]
+   },
+   {
+    "id": "yagovno",
+    "name": "Yagovno",
+    "e": "🟤",
+    "base": 90,
+    "lines": [
+     "Ketaifon 1",
+     "Ketaifon 2",
+     "Ketaifon 3",
+     "Ketaifon 4",
+     "Ketaifon S",
+     "Ketaifon Air",
+     "Ketaifon Neo",
+     "Ketaifon Fold"
+    ]
+   }
+  ],
+  "TIERS": [
+   [
+    "Lite",
+    0.6,
+    4,
+    64,
+    12
+   ],
+   [
+    "",
+    0.8,
+    6,
+    128,
+    24
+   ],
+   [
+    "Pro",
+    1,
+    8,
+    256,
+    48
+   ],
+   [
+    "Max",
+    1.3,
+    12,
+    512,
+    64
+   ],
+   [
+    "Ultra",
+    1.7,
+    16,
+    1024,
+    108
+   ]
+  ],
+  "MODN": [
+   [
+    "Battery+",
+    "батарея 8000 мА·ч"
+   ],
+   [
+    "Camera Pro",
+    "камера-мод 200 Мп"
+   ],
+   [
+    "Gamer",
+    "охлаждение и экран 165 Гц"
+   ],
+   [
+    "Eco",
+    "корпус из переработки"
+   ],
+   [
+    "Slim",
+    "ультратонкий корпус 5 мм"
+   ],
+   [
+    "Rugged",
+    "защита от ударов и воды"
+   ],
+   [
+    "Retro",
+    "ретро-дизайн с кнопками"
+   ],
+   [
+    "Photo",
+    "фотооптика и зум"
+   ],
+   [
+    "Business",
+    "защита данных и 2 SIM"
+   ],
+   [
+    "Kids",
+    "детский режим, прочный корпус"
+   ]
+  ],
+  "IDEAOPT": {
+   "Камера": [
+    "Базовая 12 Мп",
+    "50 Мп",
+    "108 Мп",
+    "200 Мп"
+   ],
+   "Батарея": [
+    "4000 мА·ч",
+    "5000 мА·ч",
+    "6000 мА·ч",
+    "8000 мА·ч"
+   ],
+   "Экран": [
+    "LCD",
+    "OLED",
+    "AMOLED 120 Гц",
+    "LTPO 144 Гц"
+   ],
+   "Чип": [
+    "Entry",
+    "Mid",
+    "Flagship",
+    "Ultra"
+   ]
+  },
+  "BTH": [
+   [
+    "light",
+    "☀️ Светлая"
+   ],
+   [
+    "dark",
+    "🌙 Чёрная"
+   ],
+   [
+    "amoled",
+    "⚫ AMOLED"
+   ],
+   [
+    "sunset",
+    "🌇 Закат"
+   ]
+  ],
+  "PLUGLIB": [
+   {
+    "id": "ideas",
+    "name": "Конструктор телефонов",
+    "description": "Добавляет вкладку «Идеи»: создание собственных модифицированных смартфонов.",
+    "features": [
+     "ideas"
+    ]
+   },
+   {
+    "id": "ocean",
+    "name": "Океан и бонусы",
+    "description": "Новая тема «Океан» и кнопки «Бесплатная реклама» и «Следующий день».",
+    "themes": [
+     {
+      "id": "ocean",
+      "name": "🌊 Океан",
+      "vars": {
+       "--bg": "#001a26",
+       "--glow": "#06465f",
+       "--pa": "#08283a",
+       "--pb": "#062132",
+       "--p2": "#0b3550",
+       "--line": "#1b6a8a",
+       "--soft": "#12506b",
+       "--ac": "#4fd1ff",
+       "--ink": "#00212e",
+       "--field": "#04202e",
+       "--act": "#0f4f6e",
+       "--addbg": "#0e4560",
+       "--head": "#001a26d9"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "label": "📢 Бесплатная реклама",
+      "action": "ads",
+      "value": 7
+     },
+     {
+      "label": "⏭ День",
+      "action": "skip"
+     }
+    ]
+   },
+   {
+    "id": "bundles",
+    "name": "Наборы техники",
+    "description": "Вкладка «Наборы»: собирай из товаров на полке наборы со скидкой. Набор с модульным аккумулятором (мод) дороже и продаётся охотнее. Тема «Мята».",
+    "features": [
+     "bundles"
+    ],
+    "themes": [
+     {
+      "id": "mint",
+      "name": "🌿 Мята",
+      "vars": {
+       "--bg": "#07140f",
+       "--glow": "#12402f",
+       "--pa": "#0e2219",
+       "--pb": "#0b1c15",
+       "--p2": "#14301f",
+       "--line": "#2a6b50",
+       "--soft": "#1e4f3b",
+       "--ac": "#5ee6a8",
+       "--ink": "#05180f",
+       "--green": "#8cffc4",
+       "--field": "#091a13",
+       "--act": "#1c5a41",
+       "--addbg": "#18492f",
+       "--head": "#07140fd9",
+       "--wal": "#0f3322",
+       "--walL": "#2f8a62"
+      }
+     }
+    ],
+    "buttons": []
+   }
+  ],
+  "TYPES": [
+   {
+    "k": "t",
+    "cat": "Планшеты",
+    "lines": [
+     "Pad",
+     "Slate",
+     "Tab",
+     "Note"
+    ],
+    "mult": 1.1,
+    "specs": [
+     "8″ • 3 ГБ • 64 ГБ",
+     "10″ • 4 ГБ • 128 ГБ",
+     "11″ • 8 ГБ • 256 ГБ",
+     "12.9″ • 12 ГБ • 512 ГБ",
+     "14.6″ • 16 ГБ • 1 ТБ"
+    ]
+   },
+   {
+    "k": "c",
+    "cat": "Компьютеры",
+    "lines": [
+     "Desk",
+     "Tower"
+    ],
+    "mult": 2.4,
+    "specs": [
+     "Офисный • 8 ГБ • 256 ГБ SSD",
+     "Домашний • 16 ГБ • 512 ГБ SSD",
+     "Игровой • 32 ГБ • 1 ТБ • RTX",
+     "Станция • 64 ГБ • 2 ТБ SSD",
+     "Топ • 128 ГБ • 4 ТБ • 2×GPU"
+    ]
+   },
+   {
+    "k": "l",
+    "cat": "Ноутбуки",
+    "lines": [
+     "Book"
+    ],
+    "mult": 2,
+    "specs": [
+     "14″ • 8 ГБ • 256 ГБ",
+     "14″ • 16 ГБ • 512 ГБ",
+     "15.6″ • 16 ГБ • 1 ТБ",
+     "16″ • 32 ГБ • 1 ТБ • RTX",
+     "18″ • 64 ГБ • 2 ТБ • RTX"
+    ]
+   }
+  ]
+ }
+}
