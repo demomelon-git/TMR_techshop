@@ -1,0 +1,18 @@
+{
+  "engine": {
+    "name": "TMR",
+    "version": "0.1.0"
+  },
+  "root": "tmr-root",
+  "libraries": [
+    "libraries/shop-lib.js",
+    "libraries/storage-lib.js",
+    "libraries/ui-lib.js"
+  ],
+  "systems": [
+    "shop",
+    "storage",
+    "ui"
+  ],
+  "game": "games/tech-shop.json"
+}
