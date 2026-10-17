@@ -1,18 +1,25 @@
 {
   "engine": {
     "name": "TMR",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
-  "root": "tmr-root",
+  "canvas": {
+    "element": "tmr-canvas",
+    "width": 960,
+    "height": 540,
+    "pixelRatio": 1,
+    "pixelArt": false
+  },
+  "loop": {
+    "fps": 60,
+    "maxFrame": 0.1
+  },
+  "pauseOnBlur": false,
+  "hotkeys": false,
+  "debug": false,
   "libraries": [
-    "libraries/shop-lib.js",
-    "libraries/storage-lib.js",
-    "libraries/ui-lib.js"
+    "libraries/save-lib.js",
+    "libraries/storage-lib.js"
   ],
-  "systems": [
-    "shop",
-    "storage",
-    "ui"
-  ],
-  "game": "games/tech-shop.json"
+  "game": "games/tech-shop/game.json"
 }

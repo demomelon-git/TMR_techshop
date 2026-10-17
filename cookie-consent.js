@@ -20,14 +20,26 @@
   const removeSave = () => {
     document.cookie.split(';').map(x => x.trim().split('=')[0]).filter(n => n.startsWith(SAVE_PREFIX)).forEach(erase);
   };
+  const toB64 = s => {
+    let bin = '';
+    new TextEncoder().encode(s).forEach(b => { bin += String.fromCharCode(b); });
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  };
+  const fromB64 = s => {
+    const bin = atob(s.replace(/-/g, '+').replace(/_/g, '/'));
+    return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+  };
   const current = () => read(CONSENT);
   const save = data => {
     if (current() !== 'accepted') return false;
-    const raw = JSON.stringify(data);
-    // Split into conservative chunks to avoid per-cookie browser size limits.
-    const size = 2800;
+    // Cyrillic grows ~6x under URL-encoding, so the save is stored as base64url of UTF-8 (~2.7x) instead.
+    // One cookie must stay under ~4 KB, and the total is capped: every request to the site carries these cookies.
+    let enc;
+    try { enc = toB64(JSON.stringify(data)); } catch (_) { return false; }
+    if (enc.length > 7500) return false;
+    const size = 3000;
     const chunks = [];
-    for (let i = 0; i < raw.length; i += size) chunks.push(raw.slice(i, i + size));
+    for (let i = 0; i < enc.length; i += size) chunks.push(enc.slice(i, i + size));
     removeSave();
     chunks.forEach((chunk, i) => write(SAVE_PREFIX + i, chunk));
     write(SAVE_PREFIX + 'count', String(chunks.length));
@@ -44,7 +56,7 @@
         if (part === null) return null;
         raw += part;
       }
-      return JSON.parse(raw);
+      return JSON.parse(raw.startsWith('{') ? raw : fromB64(raw));   // '{' — сохранение прежнего формата
     } catch (_) { return null; }
   };
   const panel = document.createElement('section');

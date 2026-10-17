@@ -1,32 +1,17 @@
-TMR Engine 0.1.0 — игра «Магазин техники»
+TMR Engine 0.2.0 — игра «Магазин техники» (версия для GitHub, cookies, без папок mods и plugins)
 
-Структура:
-- TMR.html          игровая оболочка (один пустой контейнер #tmr-root)
-- engine.js         загрузчик: читает engine.json и game JSON, подключает библиотеки,
-                    вызывает у каждой системы init / update(dt) / render
-- engine.json       конфигурация: список библиотек (libraries) и порядок систем (systems)
-- games/tech-shop.json   данные игры: 7 компаний, ступени моделей, названия модов,
-                    опции идей, встроенные плагины, стартовые деньги, папка сохранений
-- libraries/shop-lib.js     модель магазина: каталог (7 × 85), цены, дни и продажи, наборы, плагины
-- libraries/storage-lib.js  автосохранение в браузер + подключение папки (подпапка save)
-- libraries/ui-lib.js       интерфейс на DOM: вкладки, каталог, интеграции, идеи, наборы, плагины и моды
-- plugins/plugin-bundles.json   пример плагина (тема «Мята» + наборы телефонов)
-- mods/mod-modular-battery.json пример мода (модульный аккумулятор для наборов)
+ЗАПУСК
+Локально: python start.py (откроет http://localhost:8000/TMR.html). file:// не работает.
+GitHub Pages: загрузите все файлы в корень репозитория, Settings → Pages → ветка main, папка /(root). Подробности в README.md.
 
-Удалены за ненадобностью: renderer-lib (canvas), physics-lib, audio-lib.
-Движок теперь не требует canvas: он необязателен ("canvas" в engine.json).
+ФАЙЛЫ
+index.html, TMR.html    оболочка: полоса движка + контейнер #tmr-root, canvas скрыт; подключает cookie-consent.js
+cookie-consent.js       окно согласия и запись сохранения в cookies (base64, части по 3000 символов, не более ~7,5 КБ)
+engine.js, start.py     ядро и локальный сервер движка 0.2 (без изменений)
+engine.json             подключены libraries/save-lib.js и libraries/storage-lib.js; pauseOnBlur и hotkeys выключены
+libraries/save-lib.js   библиотека сохранений движка 0.2 (без изменений): r.save, папка на диске
+libraries/storage-lib.js  подменяет запись localStorage на cookies после согласия; r.save работает как раньше
+games/tech-shop/        game.json (данные), shop-lib.js (каталог 7 × 85, дни, продажи, наборы), ui-lib.js (интерфейс на DOM)
 
-Запуск:
-1. Распакуйте архив.
-2. Запустите start.bat (Windows) или start.sh, либо в папке выполните: python -m http.server 8000
-3. Откройте http://localhost:8000/TMR.html
-
-Не открывайте TMR.html через file://: браузер заблокирует загрузку JSON и библиотек.
-Папка игры (кнопка «Подключить папку») работает в Chrome и Edge на http://localhost.
-
-В этой сборке сохранение через cookies работает только после согласия пользователя. Кнопка «Cookies» позволяет поменять решение; при отказе сохранение можно скачать JSON-файлом.
-Библиотеки исполняются как обычный JavaScript — используйте только доверенные файлы.
-
-Своя библиотека: файл libraries/имя-lib.js, внутри
-  window.TMRLibs.имя = { init(runtime){}, update(runtime, dt){}, render(runtime){} };
-и добавьте путь в "libraries", а имя — в "systems" в engine.json. Данные игры доступны как window.TMRGame.
+Подключение собственной библиотеки: добавьте путь в "libraries" (engine.json или game.json); файл регистрирует window.TMRLibs.<имя> = { init, update, render }.
+Библиотеки выполняются как обычный JavaScript — подключайте только доверенные файлы.
