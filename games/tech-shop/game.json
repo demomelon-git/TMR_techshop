@@ -3,8 +3,8 @@
  "title": "Магазин техники",
  "start": 3000,
  "libraries": [
-  "games/tech-shop/shop-lib.js",
-  "games/tech-shop/ui-lib.js"
+  "shop-lib.js",
+  "ui-lib.js"
  ],
  "data": {
   "CO": [
