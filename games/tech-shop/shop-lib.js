@@ -34,6 +34,7 @@ window.TMRLibs.shop={
   init(r){
     R=r;
     let d=r.save.get("state",null);
+    if(!d){try{d=JSON.parse(localStorage.getItem("phoneShop")||"null")}catch(e){}} // сохранение из версии без движка 0.2
     if(d&&Number.isFinite(d.money))S=Object.assign(DEF(),d);
     // r.state занят состоянием движка (playing/paused), поэтому наше состояние лежит в глобальном S
   },
